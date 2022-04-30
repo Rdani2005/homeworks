@@ -1,0 +1,30 @@
+.h-150px {
+    height: 150px;
+}
+
+.glass {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-text {
+    color: #fff;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.input-text:focus {
+    color: #fff;
+    background: none;
+    border: 2px solid rgba(83, 130, 218, 0.7);
+
+}
+
+.circle {
+    border-radius: 50%;
+}
