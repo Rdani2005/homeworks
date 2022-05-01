@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import ParticlesBg from 'particles-bg'
+import Particles from "react-tsparticles";
+
 import Card from '../components/Card'
+
+import { loadSnowPreset } from "tsparticles-preset-snow";
+
 const Todo = () => {
 
   const [todo, setTodo] = useState([])
@@ -23,10 +27,14 @@ const Todo = () => {
   }, [id])
 
 
+  const particlesInit = async (engine) => {
+    await loadSnowPreset(engine);
+  };
+
   return (
     <main>
+      <Particles options={{ preset: "snow" }} init={particlesInit} />
       <Card todo={todo}></Card>
-      <ParticlesBg color="#333D51" type="lines" bg={true} />
     </main>
   )
 }

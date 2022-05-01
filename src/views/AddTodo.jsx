@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import ParticlesBg from 'particles-bg'
+import Particles from "react-tsparticles";
+import { loadSeaAnemonePreset } from "tsparticles-preset-sea-anemone"
 
 const AddTodo = () => {
 
@@ -51,8 +52,17 @@ const AddTodo = () => {
         })
     }
 
+    const particlesInit = async (engine) => {
+        await loadSeaAnemonePreset(engine);
+    };
+
     return (
-        <div className="container d-flex justify-content-center ">
+        <main className="container d-flex justify-content-center ">
+            <Particles
+                id="tsparticles"
+                init={particlesInit}
+                options={{ preset: "seaAnemone" }}
+            />
             <form action="" className="card w-50 mt-5 glass text-white" onSubmit={handleSubmit}>
                 <div className="card-header text-center">
                     <h1>Agregar Tarea</h1>
@@ -106,8 +116,8 @@ const AddTodo = () => {
                     <Link to="/" className="btn btn-danger">Cancelar</Link>
                 </div>
             </form>
-            <ParticlesBg color="#333D51" type="ball" bg={true} />
-        </div>
+
+        </main>
     )
 }
 
