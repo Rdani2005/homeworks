@@ -112,8 +112,8 @@ const AddTodo = () => {
                 </div>
 
                 <div className="d-flex flex-wrap justify-content-around mb-3">
-                    <button type="submit" className="btn btn-primary">Agregar</button>
-                    <Link to="/" className="btn btn-danger">Cancelar</Link>
+                    <button type="submit" className="btn btn-primary mb-3">Agregar</button>
+                    <Link to="/" className="btn btn-danger mb-3">Cancelar</Link>
                 </div>
             </form>
 

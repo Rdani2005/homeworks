@@ -39,9 +39,9 @@ const Card = ({ todo }) => {
                     <p>{todo.description}</p>
                     <p className={"badge " + (todo.urgency === "HG" ? "bg-danger" : (todo.urgency === "MD") ? "bg-warning" : "bg-success")}>{getUrgency(todo.urgency)}</p>
                 </div>
-                <div className="card-footer d-flex justify-content-around">
-                    <Link to="/" className="btn btn-success">ir Atras</Link>
-                    <button onClick={finishTodo} className="btn btn-danger">Terminado</button>
+                <div className="card-footer d-flex justify-content-around flex-wrap">
+                    <Link to="/" className="btn btn-success mb-3">ir Atras</Link>
+                    <button onClick={finishTodo} className="btn btn-danger mb-3">Terminado</button>
                 </div>
             </div>
         </div>

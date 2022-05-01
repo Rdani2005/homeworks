@@ -67,9 +67,9 @@ const Todos = () => {
                                             <i className={"badge " + (todo.urgency === "HG" ? "bg-danger" : (todo.urgency === "MD") ? "bg-warning" : "bg-success")}>{getUrgency(todo.urgency)}</i>
                                         </p>
                                     </div>
-                                    <div className="card-footer d-flex justify-content-between">
-                                        <Link to={`/todo/${todo.id}`} className="btn btn-success">Ver trabajo</Link>
-                                        <button onClick={(e) => FinishTodo(todo.id, e)} className="btn btn-danger">Terminado</button>
+                                    <div className="card-footer d-flex justify-content-between flex-wrap">
+                                        <Link to={`/todo/${todo.id}`} className="btn btn-success mb-3">Ver trabajo</Link>
+                                        <button onClick={(e) => FinishTodo(todo.id, e)} className="btn btn-danger mb-3">Terminado</button>
                                     </div>
                                 </div>
                             </div>
