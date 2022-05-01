@@ -66,6 +66,9 @@ const Todos = () => {
                                         <p>Nivel de urgencia:&nbsp;
                                             <i className={"badge " + (todo.urgency === "HG" ? "bg-danger" : (todo.urgency === "MD") ? "bg-warning" : "bg-success")}>{getUrgency(todo.urgency)}</i>
                                         </p>
+                                        <p>
+                                            Finaliza el:&nbsp; {todo.finish_at}
+                                        </p>
                                     </div>
                                     <div className="card-footer d-flex justify-content-between flex-wrap">
                                         <Link to={`/todo/${todo.id}`} className="btn btn-success mb-3">Ver trabajo</Link>
