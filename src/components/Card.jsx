@@ -31,7 +31,7 @@ const Card = ({ todo }) => {
 
     return (
         <div className="container mt-5 d-flex justify-content-center">
-            <div className="card text-center glass w-50 text-white" >
+            <div className="card text-center glass w-75 text-white" >
                 <div className="card-header">
                     <h1>{todo.title}</h1>
                 </div>

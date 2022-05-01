@@ -63,7 +63,7 @@ const AddTodo = () => {
                 init={particlesInit}
                 options={{ preset: "seaAnemone" }}
             />
-            <form action="" className="card w-50 mt-5 glass text-white" onSubmit={handleSubmit}>
+            <form action="" className="card w-75 mt-5 glass text-white" onSubmit={handleSubmit}>
                 <div className="card-header text-center">
                     <h1>Agregar Tarea</h1>
                 </div>
