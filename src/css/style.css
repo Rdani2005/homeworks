@@ -28,3 +28,7 @@
 .circle {
     border-radius: 50%;
 }
+
+.bg-darker {
+    background-color: rgba(0, 0, 0, 0.3);
+}

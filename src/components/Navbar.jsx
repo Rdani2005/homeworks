@@ -5,7 +5,7 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 const Navbar = () => {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
+            <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-darker">
                 <div className="container-fluid">
                     <h1 className="navbar-brand"><Link to="/" className="text-white">Tareas Pendientes</Link></h1>
                     <Link to="/add" className="btn btn-success circle"><AddBoxIcon /></Link>
