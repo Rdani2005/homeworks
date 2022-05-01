@@ -25,7 +25,7 @@ const AddTodo = () => {
         console.log(todo);
 
         axios.post(
-            'http://127.0.0.1:8000/api/todos/',
+            'https://homeworks-rdani.herokuapp.com/api/todos/',
             {
                 title: todo.title,
                 description: todo.description,
@@ -66,8 +66,8 @@ const AddTodo = () => {
                 </div>
 
                 <div className="my-3 row p-3">
-                        <label htmlFor="description" className="col-sm-3 col-form-label ">Descripción</label>
-                    
+                    <label htmlFor="description" className="col-sm-3 col-form-label ">Descripción</label>
+
                     <div className="col-sm-9">
                         <textarea type="text" className="form-control input-text" name="description" id="description" onChange={handleChange} required />
                     </div>

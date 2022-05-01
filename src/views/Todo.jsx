@@ -15,7 +15,7 @@ const Todo = () => {
 
     let getTodo = async () => {
 
-      const res = await axios.get(`http://127.0.0.1:8000/api/todos/todo/${id}/`)
+      const res = await axios.get(`https://homeworks-rdani.herokuapp.com/api/todos/todo/${id}/`)
       setTodo(res.data)
     }
 

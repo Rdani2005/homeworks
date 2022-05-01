@@ -20,7 +20,7 @@ const Card = ({ todo }) => {
     }
 
     const finishTodo = () => {
-        axios.delete(`http://127.0.0.1:8000/api/todos/todo/${todo.id}/`)
+        axios.delete(`https://homeworks-rdani.herokuapp.com/api/todos/todo/${todo.id}/`)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

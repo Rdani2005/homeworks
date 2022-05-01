@@ -19,7 +19,7 @@ const Todos = () => {
     const [todos, setTodo] = useState([])
 
     let getTodo = async () => {
-        const res = await axios.get('http://127.0.0.1:8000/api/todos/')
+        const res = await axios.get('https://homeworks-rdani.herokuapp.com/api/todos/')
         setTodo(res.data)
     }
 
@@ -35,7 +35,7 @@ const Todos = () => {
     }
 
     const FinishTodo = (id, e) => {
-        axios.delete(`/api/todos/todo/${id}/`)
+        axios.delete(`https://homeworks-rdani.herokuapp.com/api/todos/todo/${id}/`)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
