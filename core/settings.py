@@ -1,5 +1,6 @@
+import os
+import dj_database_url
 from pathlib import Path
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -12,7 +13,7 @@ SECRET_KEY = 'django-insecure-tqpes(4nic@0-6whe-m4v*mbkc82&g3ir#$nyz$v^9y_v3=mm(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +42,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # CORS Middleware
     "corsheaders.middleware.CorsMiddleware",
+    # Whitenoise middleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -49,7 +52,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'front/build'
+            BASE_DIR / 'build/'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -71,11 +74,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'sample1234',
+        'USER': 'postgres',
+        'PASSWORD': 'Seque1505',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -102,11 +111,18 @@ USE_I18N = True
 USE_TZ = True
 
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'front/build/static'
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+STATICFILES_DIRS = (
+    BASE_DIR / 'build/static',
+    os.path.join(PROJECT_ROOT, 'static')
+)
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
